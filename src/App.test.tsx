@@ -6,8 +6,10 @@ describe('App', () => {
   it('renders the application title and welcome text', () => {
     render(<App />);
     expect(
-      screen.getByRole('heading', { name: /math practice app/i }),
+      screen.getByRole('heading', { name: /welcome to math practice!/i }),
     ).toBeInTheDocument();
-    expect(screen.getByText(/welcome to math practice!/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /start practice/i }),
+    ).toBeInTheDocument();
   });
 });

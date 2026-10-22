@@ -1,0 +1,139 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  user-select: none;
+  text-decoration: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Sizes */
+.btn--sm {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  min-height: 38px;
+}
+
+.btn--md {
+  padding: 10px 20px;
+  font-size: 1.05rem;
+  min-height: 48px;
+}
+
+.btn--lg {
+  padding: 14px 28px;
+  font-size: 1.25rem;
+  min-height: 56px;
+  border-radius: 16px;
+}
+
+.btn--xl {
+  padding: 18px 36px;
+  font-size: 1.45rem;
+  min-height: 64px;
+  border-radius: 20px;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Variants */
+.btn--primary {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.btn--secondary {
+  background-color: #f1f5f9;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background-color: #e2e8f0;
+}
+
+.btn--success {
+  background-color: #10b981;
+  color: #ffffff;
+  border-color: #059669;
+}
+
+.btn--success:hover:not(:disabled) {
+  background-color: #059669;
+}
+
+.btn--danger {
+  background-color: #ef4444;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
+.btn--danger:hover:not(:disabled) {
+  background-color: #dc2626;
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn--outline:hover:not(:disabled) {
+  background-color: #eff6ff;
+}
+
+/* Multiple choice specific button */
+.btn--choice {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 3px solid #cbd5e1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 18px;
+  padding: 16px 24px;
+  min-height: 68px;
+}
+
+.btn--choice:hover:not(:disabled) {
+  border-color: #3b82f6;
+  background-color: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.15);
+}
+
+.btn--choice.btn--selected {
+  background-color: #eff6ff;
+  border-color: #2563eb;
+  color: #1d4ed8;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
