@@ -9,37 +9,45 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   isSelected?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  children,
-  variant = 'primary',
-  size = 'md',
-  fullWidth = false,
-  isSelected = false,
-  className = '',
-  disabled,
-  ...props
-}) => {
-  const classes = [
-    'btn',
-    `btn--${variant}`,
-    `btn--${size}`,
-    fullWidth ? 'btn--full' : '',
-    isSelected ? 'btn--selected' : '',
-    className,
-  ]
-    .filter(Boolean)
-    .join(' ');
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      variant = 'primary',
+      size = 'md',
+      fullWidth = false,
+      isSelected = false,
+      className = '',
+      disabled,
+      ...props
+    },
+    ref,
+  ) => {
+    const classes = [
+      'btn',
+      `btn--${variant}`,
+      `btn--${size}`,
+      fullWidth ? 'btn--full' : '',
+      isSelected ? 'btn--selected' : '',
+      className,
+    ]
+      .filter(Boolean)
+      .join(' ');
 
-  return (
-    <button
-      className={classes}
-      disabled={disabled}
-      aria-pressed={isSelected ? true : undefined}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
+    return (
+      <button
+        ref={ref}
+        className={classes}
+        disabled={disabled}
+        aria-pressed={isSelected ? true : undefined}
+        {...props}
+      >
+        {children}
+      </button>
+    );
+  },
+);
+
+Button.displayName = 'Button';
 
 export default Button;
