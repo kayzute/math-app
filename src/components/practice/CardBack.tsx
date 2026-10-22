@@ -18,12 +18,11 @@ export const CardBack: React.FC<CardBackProps> = ({
   isFlipped,
   hasRecordedResult,
 }) => {
-  // Complete equation: replace "= ?" with `= ${correctAnswer}`
+  // Solved equation revealing correct answer (e.g. 7 × 8 = 56)
   const solvedEquation = question.displayText.replace(
     '?',
     String(question.correctAnswer),
   );
-  const isMatch = selectedAnswer === question.correctAnswer;
 
   return (
     <div
@@ -39,22 +38,10 @@ export const CardBack: React.FC<CardBackProps> = ({
         <div className="card-solution-equation">{solvedEquation}</div>
         <div className="card-user-answer">
           <span>Your answer: </span>
-          <strong
-            className={`answer-tag ${isMatch ? 'answer-tag--match' : 'answer-tag--mismatch'}`}
-          >
+          <strong className="answer-tag">
             {selectedAnswer !== null ? selectedAnswer : 'None selected'}
           </strong>
         </div>
-
-        {isMatch ? (
-          <div className="answer-feedback answer-feedback--correct">
-            🎉 Nice work! You selected the right answer.
-          </div>
-        ) : (
-          <div className="answer-feedback answer-feedback--review">
-            💡 Good effort! Review the correct answer above.
-          </div>
-        )}
       </div>
 
       <div className="card-self-report-section">
